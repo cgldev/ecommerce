@@ -3,14 +3,22 @@ import "./NavBar.css";
 
 const NavBar = () => {
   return (
-    <div>
-      <h1 className="titulo">BIENVENIDOS</h1>
-      <ul>
-        <li>Item 1</li>
-        <li>Item 2</li>
-        <li>Item 3</li>
-      </ul>
-    </div>
+    <header className="main-head">
+      <nav>
+        <h1 id="logo">Ecommerce</h1>
+        <ul>
+          <li>
+            <a href="#">Home</a>
+          </li>
+          <li>
+            <a href="#">Item 1</a>
+          </li>
+          <li>
+            <a href="#">Item 2</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
   );
 };
 
