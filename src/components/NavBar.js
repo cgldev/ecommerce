@@ -1,10 +1,12 @@
 import React from "react";
 import "./NavBar.css";
+import CartIcon from "./CartIcon";
 
 const NavBar = () => {
   return (
     <header className="main-head">
       <nav>
+        <CartIcon />
         <h1 id="logo">Ecommerce</h1>
         <ul>
           <li>
