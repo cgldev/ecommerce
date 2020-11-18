@@ -5,7 +5,7 @@ export default function Productos() {
 
   return (
     <>
-      <h1>Productos {query}</h1>
+      <h1>Componente Productos {query}</h1>
     </>
   );
 }

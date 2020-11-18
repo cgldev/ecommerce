@@ -1,9 +1,7 @@
-import Productos from "./Productos";
-
-export default function Item({ productId, productName }) {
+export default function Item({ products }) {
   return (
     <>
-      <div key={productId}>{productName}</div>
+      <div key={products.id}>{products.name}</div>
     </>
   );
 }

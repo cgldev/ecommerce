@@ -28,10 +28,10 @@ const Home = ({ greeting }) => {
       <h2>{greeting}</h2>
       <h3>Sitio ecommerce demo realizado con React.js</h3>
       <ItemCount initial={1} min={1} max={100} onAdd={addToCart} />
-      <ItemList products={products} />
       <a>
         <Link to={"/productos" + id}>Ir a Productos </Link>
       </a>
+      <ItemList products={products} />
     </section>
   );
 };
