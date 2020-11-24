@@ -2,9 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "./Home.css";
-import ItemCount from "./ItemCount";
-import ItemList from "./ItemList";
-import getProductsFromDDBB from "./DDBB";
+import ItemCount from "../ItemCount/ItemCount";
+import ItemList from "../ItemList/ItemList";
+import getProductsFromDDBB from "../DDBB";
 
 const Home = ({ greeting }) => {
   const addToCart = (counter) => {
@@ -13,6 +13,8 @@ const Home = ({ greeting }) => {
 
   const id = 2020;
 
+  const [loading, setLoading] = useState(true);
+
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -20,7 +22,10 @@ const Home = ({ greeting }) => {
       .then((result) => {
         return JSON.parse(result);
       })
-      .then((result) => setProducts(result));
+      .then((result) => {
+        setProducts(result);
+        setLoading(false);
+      });
   }, []);
 
   return (
@@ -31,7 +36,7 @@ const Home = ({ greeting }) => {
       <a>
         <Link to={"/productos" + id}>Ir a Productos </Link>
       </a>
-      <ItemList products={products} />
+      {loading ? <h1>CARGANDO...</h1> : <ItemList products={products} />}
     </section>
   );
 };

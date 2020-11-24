@@ -1,6 +1,6 @@
 import React from "react";
 import "./NavBar.css";
-import CartIcon from "./CartIcon";
+import CartIcon from "../CartIcon/CartIcon.js";
 
 const NavBar = () => {
   return (
