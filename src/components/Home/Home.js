@@ -1,8 +1,24 @@
 import React from "react";
 import "./Home.css";
 import ItemList from "../ItemList/ItemList";
+import { useState, useEffect } from "react";
+import getProductsFromDDBB from "../DDBB.js";
 
-const Home = ({ products, loading }) => {
+const Home = () => {
+  const [loading, setLoading] = useState(true);
+
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    getProductsFromDDBB()
+      .then((result) => {
+        return JSON.parse(result);
+      })
+      .then((result) => {
+        setProducts(result);
+        setLoading(false);
+      });
+  }, []);
   return (
     <section className="hero">
       <h2>HOME</h2>
