@@ -1,8 +1,10 @@
 import React from "react";
+import { NavLink, Link } from "react-router-dom";
 import "./NavBar.css";
 import CartIcon from "../CartIcon/CartIcon.js";
 
 const NavBar = () => {
+  const id = 20;
   return (
     <header className="main-head">
       <nav>
@@ -10,13 +12,15 @@ const NavBar = () => {
         <h1 id="logo">Ecommerce</h1>
         <ul>
           <li>
-            <a href="#">Home</a>
+            <NavLink to={"/"} activeClassName="">
+              Home
+            </NavLink>
           </li>
           <li>
-            <a href="#">Item 1</a>
+            <Link to={"/"}>Item</Link>
           </li>
           <li>
-            <a href="#">Item 2</a>
+            <NavLink to={"/contacto"}>Contacto</NavLink>
           </li>
         </ul>
       </nav>
