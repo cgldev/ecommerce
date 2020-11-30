@@ -22,7 +22,7 @@ const Home = () => {
   return (
     <section className="hero">
       <h2>HOME</h2>
-      <h3>Sitio ecommerce demo realizado con React.js</h3>
+      <h3>Listado de productos</h3>
       {loading ? <h1>CARGANDO...</h1> : <ItemList products={products} />}
     </section>
   );
