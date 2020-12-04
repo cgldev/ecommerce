@@ -5,11 +5,11 @@ import Cart from "./components/Cart/Cart.js";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import Contacto from "./components/Contacto/Contacto";
-import { cartContext } from "./context/cartContext";
+import { AppProvider } from "./context/cartContext";
 
 function App() {
   return (
-    <cartContext.Provider value={[]}>
+    <AppProvider>
       <BrowserRouter>
         <NavBar />
         <Switch>
@@ -27,7 +27,7 @@ function App() {
           </Route>
         </Switch>
       </BrowserRouter>
-    </cartContext.Provider>
+    </AppProvider>
   );
 }
 

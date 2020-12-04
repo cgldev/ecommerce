@@ -1,12 +1,15 @@
+import { useContext } from "react";
+import { cartContext } from "../../context/cartContext";
 import ItemCount from "../ItemCount/ItemCount";
 export default function ItemDetail() {
   const addToCart = (counter) => {
     alert("Producto agregado cantidad " + counter);
   };
+  const cartCantidad = useContext(cartContext);
   return (
     <>
       <h1>Item Detail</h1>
-      <ItemCount initial={1} min={1} max={100} onAdd={addToCart} />
+      <ItemCount initial={cartCantidad} min={1} max={100} onAdd={addToCart} />
     </>
   );
 }

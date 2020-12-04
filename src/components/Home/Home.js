@@ -23,7 +23,7 @@ const Home = () => {
     <section className="hero">
       <h2>HOME</h2>
       <h3>Listado de productos</h3>
-      {loading ? <h1>CARGANDO...</h1> : <ItemList products={products} />}
+      {loading ? <h1>Loading...</h1> : <ItemList products={products} />}
     </section>
   );
 };
