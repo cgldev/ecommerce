@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { cartContext } from "../../context/cartContext.js";
 
 export default function ItemCount({ initial, max, min, onAdd }) {
-  const [counter, setCounter] = useState(initial);
+  const [cart, setCart] = useContext(cartContext);
+  const [counter, setCounter] = useState(cart);
 
   const addToCounter = () => {
     if (counter < max) {

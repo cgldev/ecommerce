@@ -5,11 +5,11 @@ export default function ItemDetail() {
   const addToCart = (counter) => {
     alert("Producto agregado cantidad " + counter);
   };
-  const cartCantidad = useContext(cartContext);
+
   return (
     <>
       <h1>Item Detail</h1>
-      <ItemCount initial={cartCantidad} min={1} max={100} onAdd={addToCart} />
+      <ItemCount min={1} max={100} onAdd={addToCart} />
     </>
   );
 }
