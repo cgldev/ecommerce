@@ -2,28 +2,33 @@ import React from "react";
 import "./Home.css";
 import ItemList from "../ItemList/ItemList";
 import { useState, useEffect } from "react";
-import getProductsFromDDBB from "../DDBB.js";
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
 
-  const [products, setProducts] = useState([]);
+  const [games, setGames] = useState([]);
 
   useEffect(() => {
-    getProductsFromDDBB()
-      .then((result) => {
-        return JSON.parse(result);
-      })
-      .then((result) => {
-        setProducts(result);
-        setLoading(false);
-      });
+    setLoading(true);
+    setTimeout(() => {
+      const url = "https://api.rawg.io/api/games?&dates=2019-09-01,2019-09-30";
+      console.log(url);
+
+      fetch(url)
+        .then((response) => {
+          return response.json();
+        })
+        .then((response) => {
+          setGames(response);
+          setLoading(false);
+        });
+    }, 3000);
   }, []);
   return (
     <section className="hero">
       <h2>HOME</h2>
       <h3>Listado de productos</h3>
-      {loading ? <h1>Loading...</h1> : <ItemList products={products} />}
+      {loading ? <h1>Loading...</h1> : <ItemList games={games.results} />}
     </section>
   );
 };

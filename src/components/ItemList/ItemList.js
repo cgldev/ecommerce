@@ -1,10 +1,10 @@
 import Item from "../Item/Item";
 
-export default function ItemList({ products }) {
+export default function ItemList({ games }) {
   return (
     <>
-      {products.map((product) => (
-        <Item products={product} />
+      {games.map((game) => (
+        <Item game={game} />
       ))}
     </>
   );
