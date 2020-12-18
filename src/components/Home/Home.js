@@ -22,7 +22,7 @@ const Home = () => {
           setGames(response);
           setLoading(false);
         });
-    }, 3000);
+    }, 2000);
   }, []);
   return (
     <section className="hero">
