@@ -1,13 +1,21 @@
 import React from "react";
-import { useState } from "react";
+import { useState, createContext, useContext } from "react";
 
-export const cartContext = React.createContext([]);
+const cartContext = createContext();
+const useCartContext = () => useContext(cartContext);
 
 export const AppProvider = ({ children }) => {
-  const [cart, setCart] = useState(0);
+  const [games, setGames] = useState([]);
+
+  function addGame(game, cant) {
+    setGames([...games, { game, cant }]);
+    console.log({ game, cant });
+  }
   return (
-    <cartContext.Provider value={[cart, setCart]}>
+    <cartContext.Provider value={{ games, setGames }}>
       {children}
     </cartContext.Provider>
   );
 };
+
+export default useCartContext;

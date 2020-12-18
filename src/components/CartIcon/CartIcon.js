@@ -6,13 +6,13 @@ import { useContext } from "react";
 import { cartContext } from "../../context/cartContext.js";
 
 const CartIcon = () => {
-  const [cart, setCart] = useContext(cartContext);
+  /*const { cant } = useContext(cartContext);*/
   return (
     <>
       <Link to={"/cart"}>
         <img className="cartIcon" src={Cart} alt="" />
       </Link>
-      <p>{cart}</p>
+      <p></p>
     </>
   );
 };
