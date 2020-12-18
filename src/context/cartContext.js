@@ -7,10 +7,9 @@ const useCartContext = () => useContext(cartContext);
 export const AppProvider = ({ children }) => {
   const [games, setGames] = useState([]);
 
-  function addGame(game, cant) {
+  const addGame = (game, cant) => {
     setGames([...games, { game, cant }]);
-    console.log({ game, cant });
-  }
+  };
   return (
     <cartContext.Provider value={{ games, setGames }}>
       {children}
