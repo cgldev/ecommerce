@@ -6,7 +6,9 @@ export default function Cart() {
   return (
     <>
       <h1>CART</h1>
-      <p></p>
+      {games.map((game) => (
+        <h1>{game.name}</h1>
+      ))}
     </>
   );
 }
