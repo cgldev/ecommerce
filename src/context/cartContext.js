@@ -12,7 +12,7 @@ export const AppProvider = ({ children }) => {
     setGames([...games, { game, cant }]);
   };
   return (
-    <cartContext.Provider value={{ games, addGame }}>
+    <cartContext.Provider value={{ games, addGame, cant }}>
       {children}
     </cartContext.Provider>
   );
