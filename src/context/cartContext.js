@@ -5,6 +5,7 @@ const cartContext = createContext();
 const useCartContext = () => useContext(cartContext);
 
 export const AppProvider = ({ children }) => {
+  const [cant, setCant] = useState([]);
   const [games, setGames] = useState([]);
 
   const addGame = (game, cant) => {
