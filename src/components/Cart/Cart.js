@@ -1,4 +1,4 @@
-import useCartContext from "../../context/cartContext.js";
+import { useCartContext } from "../../context/cartContext.js";
 export default function Cart() {
   const { games } = useCartContext();
 
@@ -7,7 +7,7 @@ export default function Cart() {
     <>
       <h1>CART</h1>
       {games.map((game) => (
-        <h1>{game.name}</h1>
+        <h1>{game.game}</h1>
       ))}
     </>
   );
