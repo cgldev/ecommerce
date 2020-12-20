@@ -1,11 +1,8 @@
 import useCartContext from "../../context/cartContext.js";
-import { useState } from "react";
 import ItemCount from "../ItemCount/ItemCount";
 
 export default function ItemDetail(detail) {
-  const [cant, setCant] = useState(0);
-
-  const { addGame } = useCartContext();
+  const { addGame, setCant, cant } = useCartContext();
 
   const handleAddToCart = (counter) => {
     setCant(counter);
