@@ -7,7 +7,10 @@ export default function Cart() {
     <>
       <h1>CART</h1>
       {games.map((game) => (
-        <h1>{game.game}</h1>
+        <>
+          <h1>{game.game}</h1>
+          <p>{game.cant}</p>
+        </>
       ))}
     </>
   );
