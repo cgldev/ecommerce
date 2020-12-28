@@ -17,7 +17,7 @@ const Home = () => {
     //pedimos lo datos
     itemCollection.get().then((response) => {
       const aux = response.docs.map((element) => {
-        return element.data();
+        return { id: element.id, ...element.data() };
       });
       //guadamos los datos en un estado
       setGames(aux);
