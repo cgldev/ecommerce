@@ -10,7 +10,7 @@ const Home = () => {
   const [games, setGames] = useState([]);
 
   useEffect(() => {
-    setLoading(false);
+    setLoading(true);
     //referencia
     const db = getFirestore();
     const itemCollection = db.collection("items");
@@ -21,7 +21,7 @@ const Home = () => {
       });
       //guadamos los datos en un estado
       setGames(aux);
-      //setLoading(false);
+      setLoading(false);
     });
   }, []);
   return (
