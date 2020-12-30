@@ -9,12 +9,12 @@ export default function ItemDetail(detail) {
   };
 
   const addGameToCart = () => {
-    addGame(detail.detail.name, cant);
+    addGame(detail.detail.title, cant);
   };
 
   return (
     <>
-      <h1>{detail.detail.name}</h1>
+      <h1>{detail.detail.title}</h1>
       <ItemCount min={1} max={100} onAdd={handleAddToCart} />
       <button onClick={addGameToCart}>Comprar {cant} </button>
     </>

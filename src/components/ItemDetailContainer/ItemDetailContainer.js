@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ItemDetail from "../ItemDetail/ItemDetail";
+import { getFirestore } from "../../firebase/firebase";
 
 export default function ItemDetailContainer() {
   const [loading, setLoading] = useState(true);
@@ -9,16 +10,16 @@ export default function ItemDetailContainer() {
 
   useEffect(() => {
     setLoading(true);
-    const url = `https://api.rawg.io/api/games/${id}`;
-    console.log(url);
-    fetch(url)
-      .then((response) => {
-        return response.json();
-      })
-      .then((response) => {
-        setDetail(response);
-        setLoading(false);
-      }, 2000);
+    //referencia
+    const db = getFirestore();
+    const itemCollection = db.collection("items");
+    const itemId = itemCollection.doc(id);
+    //pedimos lo datos
+    itemId.get().then((response) => {
+      console.log(response.data());
+      setDetail(response.data());
+      setLoading(false);
+    });
   }, [id]);
 
   return <>{loading ? <h1>Loading...</h1> : <ItemDetail detail={detail} />}</>;
