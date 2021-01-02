@@ -4,7 +4,6 @@ import "./NavBar.css";
 import CartIcon from "../CartIcon/CartIcon.js";
 
 const NavBar = () => {
-  const id = 20;
   return (
     <header className="main-head">
       <nav>

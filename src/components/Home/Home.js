@@ -16,12 +16,14 @@ const Home = () => {
     const itemCollection = db.collection("items");
     //pedimos lo datos
     itemCollection.get().then((response) => {
-      const aux = response.docs.map((element) => {
-        return { id: element.id, ...element.data() };
-      });
-      //guadamos los datos en un estado
-      setGames(aux);
-      setLoading(false);
+      if (response.size) {
+        const aux = response.docs.map((element) => {
+          return { id: element.id, ...element.data() };
+        });
+        //guadamos los datos en un estado
+        setGames(aux);
+        setLoading(false);
+      }
     });
   }, []);
   return (
