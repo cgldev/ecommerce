@@ -7,7 +7,7 @@ import { getFirestore } from "../../firebase/firebase";
 const Home = () => {
   const [loading, setLoading] = useState(true);
 
-  const [games, setGames] = useState([]);
+  const [productos, setProductos] = useState([]);
 
   useEffect(() => {
     setLoading(true);
@@ -21,7 +21,7 @@ const Home = () => {
           return { id: element.id, ...element.data() };
         });
         //guadamos los datos en un estado
-        setGames(aux);
+        setProductos(aux);
         setLoading(false);
       }
     });
@@ -30,7 +30,7 @@ const Home = () => {
     <section className="hero">
       <h2>HOME</h2>
       <h3>Listado de productos</h3>
-      {loading ? <h1>Loading...</h1> : <ItemList games={games} />}
+      {loading ? <h1>Loading...</h1> : <ItemList productos={productos} />}
     </section>
   );
 };

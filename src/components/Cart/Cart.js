@@ -1,21 +1,16 @@
-import { useState } from "react";
 import { useCartContext } from "../../context/cartContext.js";
+import { getFirestore } from "../../firebase/firebase.js";
 
 export default function Cart() {
-  const { games } = useCartContext();
-
-  const [carrito, setCarrito] = useState([]);
-
-  console.log(games);
-  console.log(carrito);
+  const { carrito } = useCartContext();
 
   return (
     <>
       <h1>CART</h1>
       <h1>SU COMPRA</h1>
-      {games.map((game) => (
+      {carrito.map((game) => (
         <>
-          <h2>{game.game}</h2>
+          <h2>{game.item}</h2>
           <p>{game.cant}</p>
         </>
       ))}
@@ -27,13 +22,23 @@ export default function Cart() {
       <p>Tel:</p>
       <button
         onClick={() => {
-          setCarrito([...carrito, games]);
           let venta = {
             buyer: { name: "Cesar", phone: "123456", email: "cesar@cesar.com" },
             items: carrito,
-            //total: ,
+            total: carrito.length,
           };
-          console.log(venta);
+
+          const db = getFirestore();
+          db.collection("Ventas")
+            .add(venta)
+            .then(({ id }) => {
+              alert(
+                "GRACIAS POR SU COMPRA\r\nSu número de transaccion es: " + id
+              );
+            })
+            .catch((error) => {
+              alert("Error " + error);
+            });
         }}
       >
         FINALIZAR COMPRA

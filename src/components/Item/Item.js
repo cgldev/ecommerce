@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 
-export default function Item({ game }) {
+export default function Item({ item }) {
   return (
     <>
-      <Link to={"/detalle" + game.id}>{game.title}</Link>
+      <Link to={"/detalle" + item.id}>{item.title}</Link>
 
       <img src="" alt="" />
-      <p> id: {game.id}</p>
+      <p> id: {item.id}</p>
     </>
   );
 }
