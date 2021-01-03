@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import "./ItemDetailContainer.css";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { getFirestore } from "../../firebase/firebase";
 
@@ -21,5 +22,13 @@ export default function ItemDetailContainer() {
     });
   }, [id]);
 
-  return <>{loading ? <h1>Loading...</h1> : <ItemDetail detail={detail} />}</>;
+  return (
+    <>
+      {loading ? (
+        <h1 className="carga">Loading...</h1>
+      ) : (
+        <ItemDetail detail={detail} />
+      )}
+    </>
+  );
 }

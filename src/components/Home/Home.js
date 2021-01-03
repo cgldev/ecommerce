@@ -27,12 +27,16 @@ const Home = () => {
     });
   }, []);
   return (
-    <section className="hero">
+    <>
       <div>
         <h2>Listado de juegos</h2>
       </div>
-      {loading ? <h1>Loading...</h1> : <ItemList productos={productos} />}
-    </section>
+      {loading ? (
+        <h1 className="carga">Loading...</h1>
+      ) : (
+        <ItemList productos={productos} />
+      )}
+    </>
   );
 };
 

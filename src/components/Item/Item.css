@@ -9,3 +9,6 @@
   height: 40vh;
   object-fit: cover;
 }
+.item h3 {
+  padding: 2rem 0rem;
+}

@@ -3,23 +3,32 @@ import { getFirestore } from "../../firebase/firebase.js";
 
 export default function Cart() {
   const { carrito } = useCartContext();
-
   return (
     <>
-      <h1>CART</h1>
+      <h1>Carro de compras</h1>
+      {carrito.length === 0 ? (
+        <h1>El carrito esta vacio</h1>
+      ) : (
+        <h2> hay productos</h2>
+      )}
+
       <h1>SU COMPRA</h1>
-      {carrito.map((game) => (
-        <>
+      {carrito.map((game, index) => (
+        <div key={index}>
           <h2>{game.item}</h2>
           <p>{game.cant}</p>
-        </>
+        </div>
       ))}
       <h1>SUS DATOS</h1>
       <p>
-        Nombre:<input type="text" id="name"></input>
+        Nombre:<input type="text" id="name" required></input>
       </p>
-      <p>Email:</p>
-      <p>Tel:</p>
+      <p>
+        Email: <input type="email" id="email" required></input>
+      </p>
+      <p>
+        Tel: <input type="tel" id="tel" required></input>
+      </p>
       <button
         onClick={() => {
           let venta = {
