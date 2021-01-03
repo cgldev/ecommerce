@@ -1,0 +1,37 @@
+.card {
+  width: 100%;
+  min-height: 100vh;
+}
+.detail {
+  width: 80%;
+  border-radius: 1rem;
+  padding: 2rem 5rem;
+  color: black;
+}
+.detail img {
+  width: 100%;
+}
+.stats {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.info {
+  text-align: center;
+}
+.platforms {
+  display: flex;
+  justify-content: space-evenly;
+}
+.platform img {
+  margin-left: 3rem;
+}
+.media {
+  margin-top: 5rem;
+}
+.media img {
+  width: 100%;
+}
+.description {
+  margin: 3rem 0rem;
+}

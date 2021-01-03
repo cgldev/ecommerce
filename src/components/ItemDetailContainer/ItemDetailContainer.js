@@ -16,7 +16,6 @@ export default function ItemDetailContainer() {
     const itemId = itemCollection.doc(id);
     //pedimos lo datos
     itemId.get().then((response) => {
-      console.log(response.data());
       setDetail(response.data());
       setLoading(false);
     });

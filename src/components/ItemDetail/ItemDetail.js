@@ -1,5 +1,7 @@
 import useCartContext from "../../context/cartContext.js";
 import ItemCount from "../ItemCount/ItemCount";
+import "./ItemDetail.css";
+import steam from "./steam.svg";
 
 export default function ItemDetail(detail) {
   const { addItem, setCant, cant } = useCartContext();
@@ -13,10 +15,30 @@ export default function ItemDetail(detail) {
   };
 
   return (
-    <>
-      <h1>{detail.detail.title}</h1>
+    <div className="card">
+      <div className="detail">
+        <div className="stats">
+          <div className="rating">
+            <h1>{detail.detail.title}</h1>
+            <p>Precio: {detail.detail.price}</p>
+          </div>
+          <div className="info">
+            <h3>Plataforma</h3>
+            <div className="platforms">
+              <img src={steam} alt="steam" />
+            </div>
+          </div>
+        </div>
+        <div className="media">
+          <img src={detail.detail.image} alt="game" />
+        </div>
+        <div className="description">
+          <p>{detail.detail.description}</p>
+        </div>
+      </div>
+
       <ItemCount min={1} max={100} onAdd={handleAddToCart} />
       <button onClick={addItemToCart}>Comprar {cant} </button>
-    </>
+    </div>
   );
 }
