@@ -28,8 +28,9 @@ const Home = () => {
   }, []);
   return (
     <section className="hero">
-      <h2>HOME</h2>
-      <h3>Listado de productos</h3>
+      <div>
+        <h2>Listado de juegos</h2>
+      </div>
       {loading ? <h1>Loading...</h1> : <ItemList productos={productos} />}
     </section>
   );
