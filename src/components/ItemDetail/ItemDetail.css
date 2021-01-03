@@ -8,9 +8,6 @@
   padding: 2rem 5rem;
   color: black;
 }
-.detail img {
-  width: 100%;
-}
 .stats {
   display: flex;
   align-items: center;
@@ -34,4 +31,12 @@
 }
 .description {
   margin: 3rem 0rem;
+}
+button {
+  font-size: 1.5rem;
+  border: none;
+  padding: 0.5rem 2rem;
+  background: rgb(151, 151, 151);
+  cursor: pointer;
+  color: white;
 }
