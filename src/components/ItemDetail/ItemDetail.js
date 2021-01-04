@@ -39,8 +39,10 @@ export default function ItemDetail(detail) {
         <div className="description">
           <p>{detail.detail.description}</p>
         </div>
-        <ItemCount min={1} max={100} onAdd={handleAddToCart} />
-        <button onClick={addItemToCart}>Comprar {cant} </button>
+        <div className="button-wrapper">
+          <ItemCount min={1} max={100} onAdd={handleAddToCart} />
+          <button onClick={addItemToCart}>Comprar {cant} </button>
+        </div>
       </div>
     </div>
   );

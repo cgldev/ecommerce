@@ -29,8 +29,11 @@ label {
 }
 button {
   padding: 1rem;
-  margin-top: 2rem;
+  margin-top: 1rem;
   border: none;
   width: 100%;
   border-radius: 20px;
+  background: rgb(151, 151, 151);
+  cursor: pointer;
+  color: white;
 }

@@ -32,11 +32,19 @@
 .description {
   margin: 3rem 0rem;
 }
-button {
+.button-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.button-wrapper button {
+  width: 30%;
   font-size: 1.5rem;
   border: none;
-  padding: 0.5rem 2rem;
+  padding: 0.5rem;
   background: rgb(151, 151, 151);
   cursor: pointer;
   color: white;
+  margin-top: 1rem;
 }
