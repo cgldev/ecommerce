@@ -22,7 +22,7 @@ export default function Categoria() {
   }, [cat]);
   return (
     <>
-      <h1>Todos los juegos de genero {cat}</h1>
+      <h1>Todos los juegos del genero {cat}</h1>
       <div>
         {productos
           ? productos.map((element) => {
