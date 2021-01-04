@@ -1,6 +1,7 @@
 import NavBar from "./components/NavBar/NavBar.js";
 import Home from "./components/Home/Home.js";
 import Cart from "./components/Cart/Cart.js";
+import Categoria from "./components/Categoria/Categoria.js";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import Contacto from "./components/Contacto/Contacto";
@@ -17,6 +18,9 @@ function App() {
           </Route>
           <Route exact path="/detalle:id">
             <ItemDetailContainer />
+          </Route>
+          <Route exact path="/categoria:cat">
+            <Categoria />
           </Route>
           <Route exact path="/contacto">
             <Contacto />

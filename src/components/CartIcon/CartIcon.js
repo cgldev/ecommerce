@@ -6,13 +6,17 @@ import { useContext } from "react";
 import { cartContext } from "../../context/cartContext.js";
 
 const CartIcon = () => {
-  const { cant } = useContext(cartContext);
+  const { carrito } = useContext(cartContext);
+  let cantidad = 0;
+  carrito.forEach((element) => {
+    cantidad += element.cant;
+  });
   return (
     <>
       <Link to={"/cart"}>
         <img className="cartIcon" src={Cart} alt="" />
       </Link>
-      <p>{cant}</p>
+      <p>{cantidad}</p>
     </>
   );
 };

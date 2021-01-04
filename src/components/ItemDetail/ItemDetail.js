@@ -1,5 +1,6 @@
 import useCartContext from "../../context/cartContext.js";
 import ItemCount from "../ItemCount/ItemCount";
+import { Link } from "react-router-dom";
 import "./ItemDetail.css";
 import steam from "./steam.svg";
 
@@ -21,6 +22,9 @@ export default function ItemDetail(detail) {
           <div className="rating">
             <h1>{detail.detail.title}</h1>
             <p>Precio: {detail.detail.price}</p>
+            <Link to={"/categoria" + detail.detail.category}>
+              <p>Genero: {detail.detail.category}</p>
+            </Link>
           </div>
           <div className="info">
             <h3>Plataforma</h3>
