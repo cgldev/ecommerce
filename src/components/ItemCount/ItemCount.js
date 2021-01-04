@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./ItemCount.css";
 
 export default function ItemCount({ initial, max, min, onAdd }) {
   const [counter, setCounter] = useState(0);
@@ -20,7 +21,7 @@ export default function ItemCount({ initial, max, min, onAdd }) {
   return (
     <>
       <button onClick={addToCounter}>+</button>
-      <div>{counter}</div>
+      <div className="counter">{counter}</div>
       <button onClick={subToCounter}>-</button>
     </>
   );

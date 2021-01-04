@@ -1,0 +1,36 @@
+.cart {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 40vh;
+}
+.intro-imagen {
+  flex: 1 1 30rem;
+}
+.intro-imagen img {
+  width: 100%;
+}
+.compra {
+  flex: 1 1 30rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.compra h1 {
+  padding: 2rem;
+}
+#name,
+#email,
+#tel {
+  padding: 0.5rem;
+  text-align: center;
+}
+label {
+  margin: 0rem 1rem;
+}
+button {
+  padding: 1rem;
+  margin-top: 2rem;
+  border: none;
+  width: 100%;
+  border-radius: 20px;
+}
