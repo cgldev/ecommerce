@@ -13,7 +13,7 @@ export default function Cart() {
           <img src={image} alt="comprar" />
         </div>
         <div className="compra">
-          <div>
+          <div className="su-compra">
             <h1>SU COMPRA</h1>
             {carrito.length !== 0 ? (
               carrito.map((game, index) => {
@@ -28,62 +28,65 @@ export default function Cart() {
               <>
                 <h1>Carrito vacio</h1>
                 <Link to={"/"}>
-                  <button>Ir a Home</button>
+                  <button className="btn">Ir a Home</button>
                 </Link>
               </>
             )}
           </div>
-          <div>
+          <form className="cart-form">
             <h1>SUS DATOS</h1>
-            <p>
-              <label for="name">Nombre:</label>
+            <div className="input-group">
+              <label>Nombre:</label>
               <input type="text" id="name" required></input>
-            </p>
-            <p>
-              <label for="email">Email:</label>
+            </div>
+            <div className="input-group">
+              <label>Email:</label>
               <input type="email" id="email" required></input>
-            </p>
-            <p>
-              <label for="tel">Tel:</label>
+            </div>
+            <div className="input-group">
+              <label>Tel:</label>
               <input type="tel" id="tel" required></input>
-            </p>
-            <button
-              onClick={() => {
-                const inputName = document.getElementById("name");
-                const inputEmail = document.getElementById("email");
-                const inputTel = document.getElementById("tel");
+            </div>
+            <div className="input-group">
+              <button
+                className="btn"
+                onClick={() => {
+                  const inputName = document.getElementById("name");
+                  const inputEmail = document.getElementById("email");
+                  const inputTel = document.getElementById("tel");
 
-                let venta = {
-                  buyer: {
-                    name: inputName.value,
-                    phone: inputTel.value,
-                    email: inputEmail.value,
-                  },
-                  items: carrito,
-                  total: carrito.length,
-                };
+                  let venta = {
+                    buyer: {
+                      name: inputName.value,
+                      phone: inputTel.value,
+                      email: inputEmail.value,
+                    },
+                    items: carrito,
+                    total: carrito.length,
+                  };
 
-                const db = getFirestore();
-                db.collection("Ventas")
-                  .add(venta)
-                  .then(({ id }) => {
-                    alert(
-                      "GRACIAS POR SU COMPRA\r\nSu número de transaccion es: " +
-                        id
-                    );
-                    inputName.value = "";
-                    inputTel.value = "";
-                    inputEmail.value = "";
-                    //limpiar carrito
-                  })
-                  .catch((error) => {
-                    alert("Error " + error);
-                  });
-              }}
-            >
-              FINALIZAR COMPRA
-            </button>
-          </div>
+                  const db = getFirestore();
+                  db.collection("Ventas")
+                    .add(venta)
+                    .then(({ id }) => {
+                      alert(
+                        "GRACIAS POR SU COMPRA\r\nSu número de transaccion es: " +
+                          id
+                      );
+                      inputName.value = "";
+                      inputTel.value = "";
+                      inputEmail.value = "";
+                      //limpiar carrito
+                    })
+                    .catch((error) => {
+                      alert("Error " + error);
+                    });
+                }}
+              >
+                FINALIZAR COMPRA
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </>
