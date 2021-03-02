@@ -1,22 +1,20 @@
 .cart {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-grow: 1;
+  flex-wrap: wrap;
+  min-height: 80vh;
 }
 .intro-imagen {
-  width: 30vw;
-  margin-left: 2rem;
-  height: auto;
-  max-width: 350px;
+  flex: 1 1 30rem;
 }
 .intro-imagen img {
   width: 100%;
 }
 .compra {
+  flex: 1 1 30rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 .compra h1 {
   font-weight: 300;
@@ -31,9 +29,7 @@
 }
 .cart-form,
 .su-compra {
-  width: 50vw;
-  max-width: 50%;
-  padding: 2rem 4rem;
+  margin: 2rem 4rem;
 }
 .input-group {
   margin-bottom: 2rem;
@@ -70,7 +66,7 @@
   border: none;
   cursor: pointer;
 }
-@media (max-width: 900px) {
+/*@media (max-width: 900px) {
   .cart {
     flex-direction: column;
     justify-content: center;
@@ -87,4 +83,4 @@
     height: 30vh;
     width: auto;
   }
-}
+}*/
