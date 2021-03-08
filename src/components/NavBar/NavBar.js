@@ -9,8 +9,10 @@ const NavBar = () => {
     <header className="main-head">
       <nav>
         <CartIcon />
-        <img src={logo} alt="" className="logo" />
-        <h1>Game Store</h1>
+        <div className="logo">
+          <img src={logo} alt="" />
+          <h1>Game Store</h1>
+        </div>
         <ul>
           <li>
             <NavLink to={"/"} activeClassName="">

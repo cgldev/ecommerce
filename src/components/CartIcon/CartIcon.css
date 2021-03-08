@@ -1,3 +1,17 @@
 .cartIcon {
-  padding-right: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  flex: 1 1 10rem;
+}
+.cartIcon p {
+  margin: 2rem;
+}
+@media screen and (max-width: 754px) {
+  .cartIcon {
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 40rem;
+  }
 }

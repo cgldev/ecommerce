@@ -12,12 +12,12 @@ const CartIcon = () => {
     cantidad += element.cant;
   });
   return (
-    <>
+    <div className="cartIcon">
       <Link to={"/cart"}>
-        <img className="cartIcon" src={Cart} alt="" />
+        <img src={Cart} alt="" />
       </Link>
       <p>{cantidad}</p>
-    </>
+    </div>
   );
 };
 
