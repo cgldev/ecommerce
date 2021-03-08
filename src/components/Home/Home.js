@@ -27,16 +27,21 @@ const Home = () => {
     });
   }, []);
   return (
-    <>
-      <div>
-        <h2>Listado de juegos</h2>
+    <section className="itemsList">
+      <header className="title">
+        <h2>Biblioteca de juegos</h2>
+        <h3>Aqui encontrara los titulos mas destacados</h3>
+      </header>
+
+      <div className="items">
+        {" "}
+        {loading ? (
+          <h1 className="carga">Loading...</h1>
+        ) : (
+          <ItemList productos={productos} />
+        )}
       </div>
-      {loading ? (
-        <h1 className="carga">Loading...</h1>
-      ) : (
-        <ItemList productos={productos} />
-      )}
-    </>
+    </section>
   );
 };
 

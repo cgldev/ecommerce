@@ -3,10 +3,10 @@ import "./ItemList.css";
 
 export default function ItemList({ productos }) {
   return (
-    <div className="items">
+    <>
       {productos.map((item) => (
         <Item item={item} key={item.id} />
       ))}
-    </div>
+    </>
   );
 }

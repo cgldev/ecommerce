@@ -7,7 +7,11 @@ import "./Cart.css";
 export default function Cart() {
   const { carrito } = useCartContext();
   return (
-    <>
+    <section>
+      <header className="title">
+        <h2>Su carro de compra</h2>
+        <h3>Vea aqui el detalle de su compra</h3>
+      </header>
       <div className="cart">
         <div className="intro-imagen">
           <img src={image} alt="comprar" />
@@ -89,6 +93,6 @@ export default function Cart() {
           </form>
         </div>
       </div>
-    </>
+    </section>
   );
 }

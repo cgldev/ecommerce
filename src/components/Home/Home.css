@@ -1,6 +1,12 @@
-h2 {
-  padding: 5rem 5rem;
-}
 .carga {
+  text-align: center;
+}
+.title {
+  padding: 3rem;
+  min-height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
