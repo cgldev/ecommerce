@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Poppins", sans-serif;
   width: 100%;
 }
 html {
@@ -35,12 +35,4 @@ p {
 a {
   text-decoration: none;
   color: #333;
-}
-#root {
-  display: flex;
-  flex-direction: column;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 40px;
-  flex-grow: 1;
 }

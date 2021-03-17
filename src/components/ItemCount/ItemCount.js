@@ -19,10 +19,14 @@ export default function ItemCount({ initial, max, min, onAdd }) {
   };
 
   return (
-    <>
-      <button onClick={addToCounter}>+</button>
+    <div className="itemCount">
+      <button onClick={addToCounter}>
+        <i className="fas fa-plus square"></i>
+      </button>
       <div className="counter">{counter}</div>
-      <button onClick={subToCounter}>-</button>
-    </>
+      <button onClick={subToCounter}>
+        <i className="fa fa-minus-square" aria-hidden="true"></i>
+      </button>
+    </div>
   );
 }

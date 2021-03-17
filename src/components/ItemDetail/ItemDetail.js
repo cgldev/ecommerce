@@ -16,34 +16,37 @@ export default function ItemDetail(detail) {
   };
 
   return (
-    <div className="card">
-      <div className="detail">
-        <div className="stats">
-          <div className="rating">
-            <h1>{detail.detail.title}</h1>
-            <p>Precio: {detail.detail.price}</p>
-            <Link to={"/categoria" + detail.detail.category}>
-              <p>Genero: {detail.detail.category}</p>
-            </Link>
-          </div>
-          <div className="info">
-            <h3>Plataforma</h3>
-            <div className="platforms">
-              <img src={steam} alt="steam" />
-            </div>
+    <section className="card">
+      <header className="stats">
+        <div className="rating">
+          <h1>{detail.detail.title}</h1>
+          <p>Precio: {detail.detail.price}</p>
+          <Link to={"/categoria" + detail.detail.category}>
+            <p>Genero: {detail.detail.category}</p>
+          </Link>
+        </div>
+        <div className="info">
+          <h3>Plataforma</h3>
+          <div className="platforms">
+            <img src={steam} alt="steam" />
           </div>
         </div>
-        <div className="media">
+      </header>
+      <div className="detail">
+        <div className="detail-img">
           <img src={detail.detail.image} alt="game" />
         </div>
-        <div className="description">
+        <div className="detail-text">
           <p>{detail.detail.description}</p>
-        </div>
-        <div className="button-wrapper">
-          <ItemCount min={1} max={100} onAdd={handleAddToCart} />
-          <button onClick={addItemToCart}>Comprar {cant} </button>
+
+          <div className="button-wrapper">
+            <ItemCount min={1} max={100} onAdd={handleAddToCart} />
+            <button className="btn-comprar" onClick={addItemToCart}>
+              Comprar {cant}{" "}
+            </button>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

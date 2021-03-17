@@ -1,9 +1,11 @@
 .cart {
+  width: 90%;
+  margin: auto;
   display: flex;
-  flex-wrap: wrap;  
+  flex-wrap: wrap;
 }
 .intro-imagen {
-  flex: 1 1 30rem;  
+  flex: 1 1 30rem;
 }
 .intro-imagen img {
   width: 100%;
@@ -19,7 +21,7 @@
 .compra h1 {
   font-weight: 300;
   font-size: 3rem;
-  padding: 1rem;  
+  padding: 1rem;
 }
 .compra h4 {
   font-weight: 100;
@@ -59,6 +61,5 @@
   font-size: 0.9rem;
   outline: none;
   border: none;
-  cursor: pointer;  
-  }
-
+  cursor: pointer;
+}

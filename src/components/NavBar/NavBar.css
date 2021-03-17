@@ -1,5 +1,7 @@
 .main-head {
   color: black;
+  width: 95%;
+  margin: 0 0 0 auto;
 }
 nav {
   display: flex;
@@ -9,6 +11,7 @@ nav {
   width: 80%;
   min-height: 10vh;
   flex-wrap: wrap;
+  margin: auto;
 }
 nav ul {
   display: flex;
