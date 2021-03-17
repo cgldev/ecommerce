@@ -1,0 +1,24 @@
+footer {
+  background: lightgrey;
+  color: black;
+  min-height: 10vh;
+  padding: 0% 5%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 2rem;
+}
+
+footer ul {
+  flex: 1 1 40rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  list-style: none;
+}
+
+footer h4 {
+  flex: 1 1 40rem;
+}

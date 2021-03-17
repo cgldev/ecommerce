@@ -29,7 +29,7 @@
   justify-content: center;
 }
 .detail-text p {
-  padding: 1rem 0;
+  padding: 1rem;
   text-align: right;
 }
 .button-wrapper {
@@ -60,4 +60,9 @@
 .itemCount button:hover {
   background: white;
   color: black;
+}
+@media screen and (max-width: 754px) {
+  .detail-text p {
+    text-align: center;
+  }
 }
