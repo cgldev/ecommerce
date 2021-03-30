@@ -1,3 +1,6 @@
+.card {
+  min-height: 80vh;
+}
 .detail {
   display: flex;
   flex-wrap: wrap;
