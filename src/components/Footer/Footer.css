@@ -1,6 +1,6 @@
 footer {
-  background: lightgrey;
-  color: black;
+  background: black;
+  color: white;
   min-height: 10vh;
   padding: 0% 5%;
   display: flex;

@@ -22,10 +22,10 @@ export default function Cart() {
             {carrito.length !== 0 ? (
               carrito.map((game, index) => {
                 return (
-                  <div key={index}>
+                  <>
                     <h4>{game.item}</h4>
                     <p>Cantidad: {game.cant}</p>
-                  </div>
+                  </>
                 );
               })
             ) : (

@@ -9,13 +9,13 @@
 }
 .intro-imagen img {
   width: 100%;
+  height: 100%;
 }
 .compra {
-  flex: 1 1 30rem;
+  flex: 2 1 30rem;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 .compra h1 {
@@ -27,6 +27,13 @@
   font-weight: 100;
   font-size: 2rem;
   padding: 1rem;
+}
+.su-compra,
+.cart-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .input-group {
   margin-bottom: 2rem;
@@ -62,4 +69,10 @@
   outline: none;
   border: none;
   cursor: pointer;
+}
+
+@media screen and (max-width: 754px) {
+  .compra {
+    flex-direction: column;
+  }
 }
